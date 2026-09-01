@@ -29,6 +29,7 @@ function Home() {
        <div className="home__inputContainer">
         <Search />
        </div>
+
       </div>
     </div>
   );
