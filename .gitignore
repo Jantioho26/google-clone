@@ -23,3 +23,13 @@ yarn-debug.log*
 yarn-error.log*
 
 keys.js
+
+# Backend
+server/.env
+server/node_modules/
+
+# Environment files
+.env
+
+
+  
