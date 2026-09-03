@@ -9,7 +9,8 @@ const useGoogleSearch = (term) => {
     const search = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/search?q=${encodeURIComponent(term)}`
+          `fetch(`/api/search?q=${encodeURIComponent(term)}`
+        )`
         );
 
         if (!response.ok) {
