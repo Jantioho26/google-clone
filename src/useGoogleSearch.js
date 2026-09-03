@@ -9,9 +9,8 @@ const useGoogleSearch = (term) => {
     const search = async () => {
       try {
         const response = await fetch(
-          `fetch(`/api/search?q=${encodeURIComponent(term)}`
-        )`
-        );
+  `/api/search?q=${encodeURIComponent(term)}`
+);
 
         if (!response.ok) {
           throw new Error("Search request failed");
