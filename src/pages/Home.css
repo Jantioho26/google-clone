@@ -1,14 +1,16 @@
 .home {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .home__header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
     align-items: center;
+    padding: 20px 30px;
 }
 
 .home__header a {
@@ -16,6 +18,7 @@
     text-decoration: inherit;
     color: rgba(0, 0, 0, 0.87);
     font-size: 15px;
+    white-space: nowrap;
 }
 
 .home__header a:hover {
@@ -25,23 +28,180 @@
 .home__headerRight {
     display: flex;
     align-items: center;
-    min-width: 13vw;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 15px;
 }
 
 .home__headerRight > .MuiSvgIcon-root {
-    margin-right: 20px;
-}
-
-.home__body > img {
-    object-fit: contain;
-    height: 100px;
+    margin-right: 5px;
+    flex-shrink: 0;
 }
 
 .home__body {
     flex: 1;
     display: flex;
-    margin-top: 10%;
     flex-direction: column;
+    align-items: center;
+
+    margin-top: 10%;
+    width: 100%;
 }
 
+.home__body > img {
+    object-fit: contain;
+    height: 100px;
+    max-width: 90%;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media screen and (max-width: 768px) {
+    .home__header {
+        padding: 18px 20px;
+    }
+
+    .home__header a {
+        margin-right: 15px;
+        font-size: 14px;
+    }
+
+    .home__body {
+        margin-top: 16%;
+    }
+
+    .home__body > img {
+        height: 90px;
+    }
+}
+
+
+/* =========================
+   MOBILE PHONES
+========================= */
+
+@media screen and (max-width: 480px) {
+    .home__header {
+        padding: 14px 15px;
+    }
+
+    .home__header a {
+        margin-right: 10px;
+        font-size: 13px;
+    }
+
+    .home__headerRight {
+        gap: 8px;
+    }
+
+    .home__headerRight > .MuiSvgIcon-root {
+        margin-right: 0;
+    }
+
+    .home__body {
+        margin-top: 24%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .home__body > img {
+        height: auto;
+        width: 200px;
+        max-width: 70vw;
+    }
+}
+
+
+/* =========================
+   SMALLER IPHONES
+========================= */
+
+@media screen and (max-width: 375px) {
+    .home__header {
+        padding: 12px 10px;
+    }
+
+    .home__header a {
+        margin-right: 8px;
+        font-size: 12px;
+    }
+
+    .home__body {
+        margin-top: 28%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .home__body > img {
+        width: 180px;
+        max-width: 68vw;
+    }
+}
+
+.home__headerLeft,
+.home__headerRight {
+    display: flex;
+    align-items: center;
+}
+
+.home__headerRight .MuiAvatar-root {
+    width: 32px;
+    height: 32px;
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .home__header {
+        padding: 12px 14px;
+    }
+
+    .home__header a {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .home__headerLeft {
+        gap: 2px;
+    }
+
+    .home__headerRight {
+        gap: 8px;
+    }
+
+    .home__headerRight .MuiSvgIcon-root {
+        font-size: 22px;
+    }
+
+    .home__headerRight .MuiAvatar-root {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .home__inputContainer {
+        width: 100%;
+    }
+}
+
+/* Very small phones */
+@media screen and (max-width: 375px) {
+    .home__header a {
+        font-size: 11px;
+        margin-right: 7px;
+    }
+
+    .home__headerRight {
+        gap: 6px;
+    }
+
+    .home__headerRight .MuiSvgIcon-root {
+        font-size: 20px;
+    }
+
+    .home__headerRight .MuiAvatar-root {
+        width: 26px;
+        height: 26px;
+    }
+}
