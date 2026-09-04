@@ -20,11 +20,11 @@ module.exports = async (req, res) => {
     });
 
     return res.status(200).json(results);
-  } catch (error) {
-    console.error("SerpAPI error:", error);
+ } catch (error) {
+  console.error("FULL SerpAPI error:", error);
 
-    return res.status(500).json({
-      error: error.message || "Search failed",
-    });
-  }
+  return res.status(500).json({
+    error: error?.message || String(error) || "Search failed",
+  });
+}
 };
